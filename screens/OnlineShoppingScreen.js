@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    height: 300,
-    width: 300,
-    marginBottom: 30,
+    height: 320,
+    width: 320,
+    marginBottom: 50,
   },
 
   button: {
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
 
   footer: {
     flexDirection: "row-reverse",
-    marginTop: 100,
+    marginTop: 55,
   },
 
   footerSkip: {
