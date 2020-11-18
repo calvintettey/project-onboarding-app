@@ -7,9 +7,9 @@ import PaymentSuccessfulScreen from "./screens/PaymentSuccessfulScreen";
 export default function App() {
   return (
     <View>
-      <OnlineShoppingScreen />
+      {/* <OnlineShoppingScreen /> */}
 
-      {/* <AddToCartScreen /> */}
+      <AddToCartScreen />
 
       {/* <PaymentSuccessfulScreen /> */}
     </View>

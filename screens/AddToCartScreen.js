@@ -23,9 +23,9 @@ export default function AddToCartScreen() {
       </TouchableOpacity>
 
       <View style={styles.footer}>
-        <Text style={styles.footerSkip}>Skip</Text>
+        <Text style={styles.footerSkip}>Previous</Text>
 
-        <Text style={styles.footerPrevious}>Previous</Text>
+        <Text style={styles.footerPrevious}>Skip</Text>
       </View>
     </View>
   );
