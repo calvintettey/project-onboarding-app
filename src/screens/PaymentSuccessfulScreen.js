@@ -1,24 +1,34 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  SafeAreaView,
+  Dimensions,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
-const {width} = Dimensions.get("screen");
+const { width } = Dimensions.get("screen");
 export default function PaymentSuccessfulScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>PAYMENT SUCCESSFUL</Text>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.heading}>PAYMENT SUCCESSFUL</Text>
 
-      <Text style={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </Text>
+        <Text style={styles.description}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </Text>
+      </View>
 
       <View style={styles.imageContainer}>
-      <Image
-        style={styles.image}
-        source={require("../../assets/purple/purchasesuccess.png")}
-      />
+        <Image
+          style={styles.image}
+          source={require("../../assets/purple/purchasesuccess.png")}
+        />
       </View>
 
       <TouchableOpacity style={styles.button}>
@@ -28,14 +38,14 @@ export default function PaymentSuccessfulScreen({ navigation }) {
       <View style={styles.footer}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("AddToCart");
+            navigation.navigate("Add To Cart");
           }}
         >
           <Text style={styles.footerPrevious}>Previous</Text>
         </TouchableOpacity>
         <View></View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -45,7 +55,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-around",
     paddingHorizontal: 16,
-    backgroundColor:'#ffffff'
+    backgroundColor: "#ffffff",
   },
 
   heading: {
@@ -57,8 +67,8 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     color: "#a3a3a3",
-    textAlign: "justify",
-    lineHeight: 24,
+    // textAlign: "justify",
+    // lineHeight: 24,
     // marginBottom: 30,
   },
 
@@ -67,8 +77,8 @@ const styles = StyleSheet.create({
     width: 0.7 * width,
     // marginBottom: 50,
   },
-  imageContainer:{
-    alignItems:"center"
+  imageContainer: {
+    alignItems: "center",
   },
   button: {
     backgroundColor: "#8580d9",

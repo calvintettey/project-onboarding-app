@@ -1,30 +1,40 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import {
+  SafeAreaView,
+  Dimensions,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
-const {width} = Dimensions.get("screen");
+const { width } = Dimensions.get("screen");
 export default function AddToCartScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>ADD TO CART</Text>
+    <SafeAreaView style={styles.container}>
+      <View>
+        <Text style={styles.heading}>ADD TO CART</Text>
 
-      <Text style={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </Text>
+        <Text style={styles.description}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </Text>
+      </View>
 
       <View style={styles.imageContainer}>
-      <Image
-        style={styles.image}
-        source={require("../../assets/purple/addtocart.png")}
-      />
+        <Image
+          style={styles.image}
+          source={require("../../assets/purple/addtocart.png")}
+        />
       </View>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.navigate("PaymentSuccessful");
+          navigation.navigate("Payment Successful");
         }}
       >
         <Text style={styles.buttonText}>Next</Text>
@@ -33,7 +43,7 @@ export default function AddToCartScreen({ navigation }) {
       <View style={styles.footer}>
         <Text
           onPress={() => {
-            navigation.navigate("OnlineShopping");
+            navigation.navigate("Online Shopping");
           }}
           style={styles.footerSkip}
         >
@@ -42,14 +52,14 @@ export default function AddToCartScreen({ navigation }) {
 
         <Text
           onPress={() => {
-            navigation.navigate("PaymentSuccessful");
+            navigation.navigate("Payment Successful");
           }}
           style={styles.footerPrevious}
         >
           Skip
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -59,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-around",
     paddingHorizontal: 16,
-    backgroundColor:'#ffffff'
+    backgroundColor: "#ffffff",
   },
 
   heading: {
@@ -71,7 +81,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     color: "#a3a3a3",
-    textAlign: "justify",
+    // textAlign: "justify",
     // lineHeight: 24,
     // marginBottom: 25,
   },
@@ -81,8 +91,8 @@ const styles = StyleSheet.create({
     width: 0.7 * width,
     // marginBottom: 50,
   },
-  imageContainer:{
-    alignItems:"center"
+  imageContainer: {
+    alignItems: "center",
   },
 
   button: {
@@ -109,7 +119,7 @@ const styles = StyleSheet.create({
 
   footerSkip: {
     color: "#a3a3a3",
-    fontSize: 17,
+    fontSize: 18,
   },
 
   footerPrevious: {

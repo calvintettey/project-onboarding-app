@@ -11,11 +11,17 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="OnlineShopping">
-        <Stack.Screen name="OnlineShopping" component={OnlineShoppingScreen} />
-        <Stack.Screen name="AddToCart" component={AddToCartScreen} />
+      <Stack.Navigator
+        initialRouteName="Online Shopping"
+        screenOptions={{
+          headerStyle: { backgroundColor: "#aba6ff" },
+          headerTintColor: "#fff",
+        }}
+      >
+        <Stack.Screen name="Online Shopping" component={OnlineShoppingScreen} />
+        <Stack.Screen name="Add To Cart" component={AddToCartScreen} />
         <Stack.Screen
-          name="PaymentSuccessful"
+          name="Payment Successful"
           component={PaymentSuccessfulScreen}
         />
       </Stack.Navigator>

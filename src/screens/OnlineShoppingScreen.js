@@ -6,10 +6,10 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
 } from "react-native";
 
-const {width} = Dimensions.get("screen");
+const { width } = Dimensions.get("screen");
 export default function OnlineShoppingScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
@@ -24,17 +24,17 @@ export default function OnlineShoppingScreen({ navigation }) {
         </Text>
       </View>
 
-     <View style={styles.imageContainer}>
-     <Image
-        style={styles.image}
-        source={require("../../assets/purple/shoppingcart.png")}
-      />
-     </View>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require("../../assets/purple/shoppingcart.png")}
+        />
+      </View>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          navigation.navigate("AddToCart");
+          navigation.navigate("Add To Cart");
         }}
       >
         <Text style={styles.buttonText}>Next</Text>
@@ -43,7 +43,7 @@ export default function OnlineShoppingScreen({ navigation }) {
       <View style={styles.footer}>
         <Text
           onPress={() => {
-            navigation.navigate("PaymentSuccessful");
+            navigation.navigate("Payment Successful");
           }}
           style={styles.footerSkip}
         >
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-around",
     paddingHorizontal: 16,
-    backgroundColor:'#ffffff'
+    backgroundColor: "#ffffff",
   },
 
   heading: {
@@ -84,8 +84,8 @@ const styles = StyleSheet.create({
     width: 0.7 * width,
     // marginBottom: 50,
   },
-  imageContainer:{
-    alignItems:"center"
+  imageContainer: {
+    alignItems: "center",
   },
   button: {
     backgroundColor: "#8580d9",
