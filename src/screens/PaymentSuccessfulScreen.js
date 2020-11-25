@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { Dimensions, StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
-export default function PaymentSuccessfulScreen() {
+const {width} = Dimensions.get("screen");
+export default function PaymentSuccessfulScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>PAYMENT SUCCESSFUL</Text>
@@ -13,18 +14,26 @@ export default function PaymentSuccessfulScreen() {
         commodo consequat.
       </Text>
 
+      <View style={styles.imageContainer}>
       <Image
         style={styles.image}
-        source={require("../assets/purple/purchasesuccess.png")}
+        source={require("../../assets/purple/purchasesuccess.png")}
       />
+      </View>
 
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
 
       <View style={styles.footer}>
-        <Text style={styles.footerPrevious}>Previous</Text>
-      <View></View>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("AddToCart");
+          }}
+        >
+          <Text style={styles.footerPrevious}>Previous</Text>
+        </TouchableOpacity>
+        <View></View>
       </View>
     </View>
   );
@@ -32,15 +41,17 @@ export default function PaymentSuccessfulScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: "column",
-    marginHorizontal: 30,
-    marginTop: 80,
+    justifyContent: "space-around",
+    paddingHorizontal: 16,
+    backgroundColor:'#ffffff'
   },
 
   heading: {
     fontSize: 30,
     fontWeight: "bold",
-    marginVertical: 15,
+    // marginVertical: 15,
   },
 
   description: {
@@ -48,15 +59,17 @@ const styles = StyleSheet.create({
     color: "#a3a3a3",
     textAlign: "justify",
     lineHeight: 24,
-    marginBottom: 30,
+    // marginBottom: 30,
   },
 
   image: {
-    height: 330,
-    width: 330,
-    marginBottom: 30,
+    height: 0.7 * width,
+    width: 0.7 * width,
+    // marginBottom: 50,
   },
-
+  imageContainer:{
+    alignItems:"center"
+  },
   button: {
     backgroundColor: "#8580d9",
     height: 60,
@@ -70,12 +83,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 25,
-    fontWeight:"bold",
+    fontWeight: "bold",
   },
 
   footer: {
     flexDirection: "row",
-    marginTop: 55,
+    // marginTop: 55,
   },
 
   footerPrevious: {

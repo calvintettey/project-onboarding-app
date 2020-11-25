@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { Dimensions, StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 
-export default function AddToCartScreen() {
+const {width} = Dimensions.get("screen");
+export default function AddToCartScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>ADD TO CART</Text>
@@ -13,19 +14,40 @@ export default function AddToCartScreen() {
         commodo consequat.
       </Text>
 
+      <View style={styles.imageContainer}>
       <Image
         style={styles.image}
-        source={require("../assets/purple/addtocart.png")}
+        source={require("../../assets/purple/addtocart.png")}
       />
+      </View>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate("PaymentSuccessful");
+        }}
+      >
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
 
       <View style={styles.footer}>
-        <Text style={styles.footerSkip}>Previous</Text>
+        <Text
+          onPress={() => {
+            navigation.navigate("OnlineShopping");
+          }}
+          style={styles.footerSkip}
+        >
+          Previous
+        </Text>
 
-        <Text style={styles.footerPrevious}>Skip</Text>
+        <Text
+          onPress={() => {
+            navigation.navigate("PaymentSuccessful");
+          }}
+          style={styles.footerPrevious}
+        >
+          Skip
+        </Text>
       </View>
     </View>
   );
@@ -33,29 +55,34 @@ export default function AddToCartScreen() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: "column",
-    marginHorizontal: 30,
-    marginTop: 80,
+    justifyContent: "space-around",
+    paddingHorizontal: 16,
+    backgroundColor:'#ffffff'
   },
 
   heading: {
     fontSize: 30,
     fontWeight: "bold",
-    marginVertical: 15,
+    // marginVertical: 15,
   },
 
   description: {
     fontSize: 18,
     color: "#a3a3a3",
     textAlign: "justify",
-    lineHeight: 24,
-    marginBottom: 25,
+    // lineHeight: 24,
+    // marginBottom: 25,
   },
 
   image: {
-    height: 300,
-    width: 300,
-    marginBottom: 50,
+    height: 0.7 * width,
+    width: 0.7 * width,
+    // marginBottom: 50,
+  },
+  imageContainer:{
+    alignItems:"center"
   },
 
   button: {
@@ -71,12 +98,12 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 25,
-    fontWeight:"bold",
+    fontWeight: "bold",
   },
 
   footer: {
     flexDirection: "row",
-    marginTop: 75,
+    // marginTop: 75,
     justifyContent: "space-between",
   },
 
@@ -89,5 +116,4 @@ const styles = StyleSheet.create({
     color: "#a3a3a3",
     fontSize: 18,
   },
-
 });
